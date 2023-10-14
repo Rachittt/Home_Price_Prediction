@@ -40,12 +40,14 @@ def load_saved_artifacts():
     global __area
     global __model
 
-    with open("server/artifacts/columns.json", 'r') as f:
+    # with open('./artifacts/columns.json', 'r') as f:
+    with open('server/artifacts/columns.json', 'r') as f:
         __data_columns = json.load(f)['data_columns']
         __area = __data_columns[4:7] + ['built-up area'] #area type column are 4, 5, 6 
         __locations = __data_columns[7:] + ['1st block jayanagar'] #First 7 columns are not location
 
-    with open("server/artifacts/bangaluru_home_prices_model.pickle", 'rb') as f:
+    # with open('./artifacts/bangaluru_home_prices_model.pickle', 'rb') as f:
+    with open('server/artifacts/bangaluru_home_prices_model.pickle', 'rb') as f:
         __model = pickle.load(f)
 
     print("Loading saved artifacts...done")
@@ -54,7 +56,7 @@ if __name__=="__main__":
     load_saved_artifacts()
     print(get_area_types())
     print(get_location_names())
-    print(get_estimated_price(1000, 3, 1, 3, 'plot area', '1st Phase JP Nagar'))
-    print(get_estimated_price(1000, 2, 1, 2, 'plot area', '1st Phase JP Nagar'))
-    print(get_estimated_price(1000, 2, 2, 2, 'carpet area', 'Kalhalli'))
-    print(get_estimated_price(1000, 2, 2, 2, 'carpet area', 'Ejipura'))
+    # print(get_estimated_price(1000, 3, 1, 3, 'plot area', '1st Phase JP Nagar'))
+    # print(get_estimated_price(1000, 2, 1, 2, 'plot area', '1st Phase JP Nagar'))
+    # print(get_estimated_price(1000, 2, 2, 2, 'carpet area', 'Kalhalli'))
+    # print(get_estimated_price(1000, 2, 2, 2, 'carpet area', 'Ejipura'))
